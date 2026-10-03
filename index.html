@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GINSUL SNACK 🍢 Jajanan Nusantara Serba 1000 - Depan SMK Tritech</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ░░ PARTICLES ░░ -->
+<div id="particles"></div>
+
+<!-- ░░ MUSIC PLAYER ░░ -->
+<div id="musicPlayer">
+  <audio id="bgMusic" loop preload="auto">
+    <source src="gimsul.mp3" type="audio/mpeg"/>
+    <source src="music/gimsul.mp3" type="audio/mpeg"/>
+  </audio>
+  <button id="musicBtn" onclick="toggleMusic()" title="Putar Musik UMKM">
+    <span class="music-disc" id="musicDisc">🎵</span>
+    <span id="musicLabel">Musik UMKM</span>
+  </button>
+  <div class="music-ticker">
+    <span>♪ Ginsul Snack • Jajanan Gorengan Nusantara • Depan SMK Tritech Informatika ♪</span>
+  </div>
+</div>
+
+<!-- ░░ NAVBAR ░░ -->
+<header id="navbar">
+  <nav class="navbar">
+    <a class="nav-logo" href="#home">
+      <div class="logo-circle">
+        <img src="image.png" alt="Logo Ginsul Snack"/>
+      </div>
+      <div>
+        <div class="brand-name">GINSUL SNACK</div>
+        <div class="brand-sub">Depan SMK Tritech Informatika • Serba Rp 1.000</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeNav()"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="#menu" onclick="closeNav()"><i class="fas fa-utensils"></i><span>Menu</span></a></li>
+      <li><a href="#ulasan" onclick="closeNav()"><i class="fas fa-star"></i><span>Ulasan</span></a></li>
+      <li><a href="#video" onclick="closeNav()"><i class="fas fa-film"></i><span>Video</span></a></li>
+      <li><a href="#pesan" onclick="closeNav()"><i class="fas fa-shopping-bag"></i><span>Pesan</span></a></li>
+      <li><a href="#riwayat" onclick="closeNav()"><i class="fas fa-receipt"></i><span>Riwayat</span></a></li>
+      <li><a href="#kontak" onclick="closeNav()"><i class="fas fa-map-marker-alt"></i><span>Lokasi</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#pesan" class="nav-order-btn">
+        <i class="fas fa-shopping-bag"></i> Pesan Sekarang
+      </a>
+      <button class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ░░ HERO SECTION ░░ -->
+<section id="home" class="hero">
+  <div class="hero-left">
+    <div class="hero-chip"><i class="fas fa-map-marker-alt"></i> Depan Sekolah SMK Tritech Informatika</div>
+    <h1 class="hero-title">
+      Jajanan Gurih <span class="highlight-maroon">Enak & Crispy!</span><br/>
+      <span class="grad-text">Serba Rp 1.000</span>
+    </h1>
+    <p class="hero-desc">
+      Aneka gorengan lezat favorit siswa & warga! Dibuat fresh dadakan setiap hari dengan bumbu tabur gurih dan saus cabai nikmat.
+    </p>
+    <div class="hero-cta">
+      <a href="#pesan" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Pesan Sekarang</a>
+      <a href="#menu" class="btn btn-outline"><i class="fas fa-utensils"></i> Lihat Menu</a>
+      <a href="#video" class="btn btn-hero-video"><i class="fas fa-play-circle"></i> Tonton Video</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="sn">Rp 1.000</span><span class="sl">Harga Pas</span></div>
+      <div class="stat-sep">|</div>
+      <div class="stat-pill"><span class="sn">100%</span><span class="sl">Halal & Fresh</span></div>
+      <div class="stat-sep">|</div>
+      <div class="stat-pill"><span class="sn">4.9 ⭐</span><span class="sl">Rating Pembeli</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-glow-ring"></div>
+    <div class="hero-img-wrap">
+      <img src="image.png" alt="Ginsul Snack Logo" class="hero-img"/>
+      <div class="orbit o1"><span>🍢</span></div>
+      <div class="orbit o2"><span>🌭</span></div>
+      <div class="orbit o3"><span>🥚</span></div>
+      <div class="orbit o4"><span>🍤</span></div>
+      <div class="orbit o5"><span>🧆</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ MARQUEE STRIP ░░ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>🍢 Otak-otak Goreng Crispy</span><span>🌭 Sosis Goreng Mekar</span>
+    <span>🥚 Telur Gulung Goreng</span><span>🍤 Tempura Goreng Renyah</span>
+    <span>🧆 Tahu Goreng Crispy</span><span>📍 Lokasi: Depan SMK Tritech Informatika</span>
+    <span>🔥 Serba Rp 1.000 / Pcs</span><span>🎁 Beli 10 Gratis 1 Pcs</span>
+    <span>🍢 Otak-otak Goreng Crispy</span><span>🌭 Sosis Goreng Mekar</span>
+    <span>🥚 Telur Gulung Goreng</span><span>🍤 Tempura Goreng Renyah</span>
+    <span>🧆 Tahu Goreng Crispy</span><span>📍 Lokasi: Depan SMK Tritech Informatika</span>
+  </div>
+</div>
+
+<!-- ░░ MENU SECTION ░░ -->
+<section id="menu" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-badge"><i class="fas fa-utensils"></i> Daftar Menu</div>
+      <h2>Gorengan Lezat <span class="grad-text">Serba Rp 1.000</span></h2>
+      <p>Semua menu digoreng fresh dengan minyak berkualitas dan bumbu pilihan.</p>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Menu cards di-generate oleh app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ░░ ULASAN & FOTO PEMBELI SECTION ░░ -->
+<section id="ulasan" class="section section-alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-badge"><i class="fas fa-comment-dots"></i> Ulasan Pembeli</div>
+      <h2>Apa Kata <span class="grad-text">Pelanggan Kami?</span></h2>
+      <p>Kepuasan pembeli dan teman-teman sekolah yang setia jajan di Ginsul Snack!</p>
+    </div>
+
+    <!-- SPOTLIGHT FOTO PEMBELI -->
+    <div class="buyer-spotlight-card">
+      <div class="buyer-img-box">
+        <img src="pembeli.jpeg" alt="Foto Pembeli Ginsul Snack" class="buyer-main-img"/>
+        <div class="buyer-verified-badge">
+          <i class="fas fa-check-circle"></i> Pembeli Setia Terverifikasi
+        </div>
+      </div>
+      <div class="buyer-info-box">
+        <div class="star-rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <span>(5.0 / 5.0)</span>
+        </div>
+        <h3 class="buyer-quote">"Otak-otak goreng sama telur gulungnya enak banget! Renyah, gurih, dan harganya pas di kantong cuma seribuan. Tiap pulang sekolah pasti mampir jajan di sini!"</h3>
+        <div class="buyer-meta">
+          <div class="buyer-avatar-mini">
+            <img src="pembeli.jpeg" alt="Pembeli"/>
+          </div>
+          <div>
+            <strong>Pelanggan Setia Ginsul Snack</strong>
+            <p>Siswa SMK Tritech Informatika • Depan Sekolah</p>
+          </div>
+        </div>
+        <div class="buyer-tags">
+          <span class="btag">🍢 Favorit: Otak-otak & Telur Gulung</span>
+          <span class="btag">🌶️ Bumbu Balado Pedas Gurih</span>
+          <span class="btag">🔥 Selalu Fresh Digoreng</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID REVIEW LAINNYA -->
+    <div class="review-mini-grid">
+      <div class="review-mini-card">
+        <div class="rmc-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Sosis goreng mekarnya renyah beneran! Saus sambalnya nagih banget, wajib beli minimal 5 tusuk."</p>
+        <span class="rmc-author">— Dimas, Siswa SMK Tritech</span>
+      </div>
+      <div class="review-mini-card">
+        <div class="rmc-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Tahu goreng crispy luarnya garing dalemnya lembut. Promo beli 10 gratis 1 nya sangat menguntungkan!"</p>
+        <span class="rmc-author">— Ayu, Pelanggan Sekitar</span>
+      </div>
+      <div class="review-mini-card">
+        <div class="rmc-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Tempura gorengnya kriuk banget. Pelayanannya ramah dan cepat, mantap terus Ginsul Snack!"</p>
+        <span class="rmc-author">— Rizky, Siswa SMK Tritech</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ VIDEO & CERITA SUASANA SECTION ░░ -->
+<section id="video" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-badge"><i class="fas fa-film"></i> Sudut Video & Suasana</div>
+      <h2>Kilas Balik & <span class="grad-text">Cerita Ginsul Snack</span></h2>
+      <p>Saksikan momen hangat, kebersamaan, dan alunan cerita di balik setiap sajian gorengan kami.</p>
+    </div>
+
+    <div class="video-showcase-wrap">
+      <div class="video-player-box">
+        <div class="video-screen-frame">
+          <video id="umkmVideo" controls preload="metadata" playsinline poster="pembeli.jpeg">
+            <source src="aneh.mp4" type="video/mp4"/>
+            Browser Anda belum mendukung pemutaran video HTML5.
+          </video>
+          <div class="video-watermark">
+            <img src="image.png" alt="Ginsul Logo"/>
+            <span>GINSUL SNACK</span>
+          </div>
+        </div>
+        <div class="video-player-bar">
+          <div class="vpb-left">
+            <span class="vpb-status"><i class="fas fa-volume-up"></i> Suara Video & Melodi Syahdu</span>
+            <span class="vpb-note"><i class="fas fa-volume-mute"></i> Musik latar otomatis berhenti saat video diputar</span>
+          </div>
+          <button class="btn-play-trigger" id="videoTriggerBtn" onclick="playVideoDirectly()">
+            <i class="fas fa-play"></i> Putar Video
+          </button>
+        </div>
+      </div>
+
+      <div class="video-story-box">
+        <div class="story-tag"><i class="fas fa-heart"></i> Cerita Penuh Makna</div>
+        <h3>Sebuah Kisah Rasa & Kenangan</h3>
+        <p class="story-desc">
+          Di setiap gigitan renyahnya gorengan hangat Ginsul Snack, tersimpan cerita lelah yang terbayar, canda tawa teman sekolah, dan kehangatan yang selalu menemani hari-hari di depan SMK Tritech Informatika.
+        </p>
+        
+        <div class="story-highlight-card">
+          <div class="shc-icon">🎬</div>
+          <div>
+            <strong>Nikmati Momen Video</strong>
+            <p>Video ini menyajikan alunan nada dan rekaman kenangan yang menyentuh hati. Klik tombol putar untuk merasakan suasananya.</p>
+          </div>
+        </div>
+
+        <div class="video-actions">
+          <button class="btn btn-primary" onclick="playVideoDirectly()">
+            <i class="fas fa-play-circle"></i> Tonton Sekarang
+          </button>
+          <a href="#pesan" class="btn btn-outline">
+            <i class="fas fa-shopping-bag"></i> Pesan Jajanan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ ORDER SECTION ░░ -->
+<section id="pesan" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-badge"><i class="fas fa-shopping-bag"></i> Pemesanan</div>
+      <h2>Form <span class="grad-text">Pemesanan Jajanan</span></h2>
+      <p>Isi nama kamu dan pilih menu gorengan yang ingin dipesan!</p>
+    </div>
+
+    <div class="order-wrap">
+      <!-- FORM BERSIH TANPA INPUT FOTO / WA -->
+      <div class="order-form-card">
+        <form id="orderForm" onsubmit="return handleOrderSubmit(event)">
+          <div class="form-field">
+            <label><i class="fas fa-user"></i> Nama Pembeli <span class="req">*</span></label>
+            <input type="text" id="namaPembeli" placeholder="Masukkan nama kamu..." required/>
+          </div>
+
+          <div class="form-field">
+            <label><i class="fas fa-utensils"></i> Pilih Menu & Tentukan Jumlah Pcs</label>
+            <div class="order-menu-list" id="menuOrderList">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label><i class="fas fa-pepper-hot"></i> Tingkat Kepedasan</label>
+              <select id="kepedasan">
+                <option value="Tidak Pedas">😊 Tidak Pedas (Bumbu Gurih Original)</option>
+                <option value="Pedas Sedang">🌶️ Pedas Sedang (Bumbu Balado Gurih)</option>
+                <option value="Sangat Pedas">🔥 Sangat Pedas (Bumbu Cabe Rawit Nampol)</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label><i class="fas fa-comment-dots"></i> Catatan Pesanan</label>
+              <input type="text" id="catatan" placeholder="Contoh: Saus dipisah, goreng agak garing..."/>
+            </div>
+          </div>
+
+          <!-- SUMMARY -->
+          <div class="order-summary" id="orderSummary">
+            <div class="summary-head">
+              <span><i class="fas fa-receipt"></i> Rincian Pesanan</span>
+              <div class="badge-ready">
+                <i class="fas fa-check-circle"></i> Siap Disiapkan
+              </div>
+            </div>
+            <div id="summaryItems" class="summary-items"><em>Belum ada item dipilih</em></div>
+            <div class="summary-footer">
+              <div class="promo-note" id="promoNote" style="display:none">
+                🎁 Promo Spesial: Beli 10 Pcs Dapat Bonus 1 Pcs Gratis!
+              </div>
+              <div class="total-row">
+                <span>Total Pembayaran:</span>
+                <span class="total-price" id="totalHarga">Rp 0</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-submit" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Kirim Pesanan Sekarang
+          </button>
+        </form>
+      </div>
+
+      <!-- SIDEBAR INFO -->
+      <div class="order-sidebar">
+        <div class="info-card ic-lokasi">
+          <div class="ic-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="ic-body">
+            <h4>Lokasi Gerai</h4>
+            <p><strong>Depan Sekolah SMK Tritech Informatika</strong></p>
+          </div>
+        </div>
+        <div class="info-card ic-jam">
+          <div class="ic-icon"><i class="fas fa-clock"></i></div>
+          <div class="ic-body">
+            <h4>Jam Buka</h4>
+            <p>Setiap Hari<br/><strong>07.00 – 21.00 WIB</strong></p>
+          </div>
+        </div>
+        <div class="info-card ic-layanan">
+          <div class="ic-icon"><i class="fas fa-store"></i></div>
+          <div class="ic-body">
+            <h4>Layanan</h4>
+            <p>Langsung di Tempat<br/><strong>& Terima Pesanan</strong></p>
+          </div>
+        </div>
+        <div class="info-card ic-promo">
+          <div class="ic-icon"><i class="fas fa-gift"></i></div>
+          <div class="ic-body">
+            <h4>Promo Spesial</h4>
+            <p>Beli <strong>10 pcs</strong> dapat<br/><strong>1 pcs GRATIS</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ RIWAYAT PESANAN SECTION ░░ -->
+<section id="riwayat" class="section section-alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-badge"><i class="fas fa-list-alt"></i> Daftar Pesanan</div>
+      <h2>Riwayat Pesanan <span class="grad-text">Terbaru</span></h2>
+      <p>Pesanan yang telah masuk dan sedang disiapkan secara langsung</p>
+    </div>
+
+    <div class="history-toolbar">
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchOrder" placeholder="Cari nama pembeli..." oninput="searchOrders()"/>
+      </div>
+      <div class="history-actions">
+        <span class="order-count" id="orderCount">0 pesanan</span>
+        <button class="btn btn-danger-sm" onclick="clearHistory()">
+          <i class="fas fa-trash-alt"></i> Bersihkan Riwayat
+        </button>
+      </div>
+    </div>
+
+    <div id="orderHistoryList" class="history-grid">
+      <div class="empty-state">
+        <div class="empty-icon">📭</div>
+        <h4>Belum ada pesanan</h4>
+        <p>Kirim pesanan pertama kamu sekarang!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ KONTAK & LOKASI SECTION ░░ -->
+<section id="kontak" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-badge"><i class="fas fa-map-marked-alt"></i> Lokasi Gerai</div>
+      <h2>Kunjungi <span class="grad-text">GINSUL SNACK</span></h2>
+      <p>Kami siap melayani kamu dengan gorengan hangat dan renyah!</p>
+    </div>
+    <div class="contact-grid-clean">
+      <div class="contact-card-highlight">
+        <div class="cch-icon"><i class="fas fa-school"></i></div>
+        <h3>Lokasi Utama</h3>
+        <p class="cch-address"><strong>Depan Sekolah SMK Tritech Informatika</strong></p>
+        <p class="cch-desc">Mudah ditemukan di area depan gerbang sekolah. Buka setiap hari dari pagi sampai malam!</p>
+        <div class="cch-badges">
+          <span>⏰ 07.00 - 21.00 WIB</span>
+          <span>🍢 Serba Rp 1.000</span>
+          <span>🎁 Beli 10 Gratis 1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="image.png" alt="Logo Ginsul"/>
+      <div>
+        <div class="fb-name">GINSUL SNACK</div>
+        <div class="fb-sub">Jajanan Nusantara • Depan SMK Tritech Informatika</div>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigasi</h5>
+      <a href="#home">Home</a><a href="#menu">Menu</a>
+      <a href="#ulasan">Ulasan</a><a href="#video">Video Cerita</a>
+      <a href="#pesan">Pesan</a><a href="#riwayat">Riwayat</a>
+    </div>
+    <div class="footer-menu-list">
+      <h5>Menu Gorengan Serba Rp 1.000</h5>
+      <span>🍢 Otak-otak Goreng</span><span>🌭 Sosis Goreng Mekar</span>
+      <span>🥚 Telur Gulung Goreng</span><span>🍤 Tempura Goreng</span>
+      <span>🧆 Tahu Goreng Crispy</span>
+    </div>
+    <div class="footer-info">
+      <h5>Informasi Gerai</h5>
+      <span><i class="fas fa-map-marker-alt"></i> Depan SMK Tritech Informatika</span>
+      <span><i class="fas fa-clock"></i> 07.00 – 21.00 WIB</span>
+      <span><i class="fas fa-tag"></i> Serba Rp 1.000 / pcs</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 GINSUL SNACK. Semua Hak Dilindungi.</span>
+    <span>Lokasi: Depan Sekolah SMK Tritech Informatika • Serba Rp 1.000</span>
+  </div>
+</footer>
+
+<!-- ░░ MODAL SUKSES ░░ -->
+<div id="modalOverlay" class="modal-overlay hidden" onclick="closeModal()"></div>
+<div id="successModal" class="modal-box hidden">
+  <div class="modal-emoji" id="modalEmoji">🎉</div>
+  <h3 id="modalTitle">Pesanan Berhasil Dikirim!</h3>
+  <p id="modalMsg">Terima kasih sudah memesan!</p>
+  <button class="btn btn-primary" onclick="closeModal()">Lihat Riwayat Pesanan</button>
+</div>
+
+<!-- ░░ SCROLL TOP ░░ -->
+<button id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ░░ DATABASE FIRESTORE BACKEND (SILENT CONNECTION) ░░ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { 
+    getFirestore, 
+    collection, 
+    addDoc, 
+    onSnapshot, 
+    deleteDoc, 
+    doc, 
+    query 
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const defaultFirebaseConfig = {
+    apiKey: "AIzaSyDummyKeyForFirestoreDemo2026Ginsul",
+    authDomain: "umkm-ginsul.firebaseapp.com",
+    projectId: "umkm-ginsul-firebase",
+    storageBucket: "umkm-ginsul-firebase.appspot.com",
+    messagingSenderId: "109823478912",
+    appId: "1:109823478912:web:a1b2c3d4e5f6g7h8i9"
+  };
+
+  try {
+    const app = initializeApp(defaultFirebaseConfig);
+    const db = getFirestore(app);
+
+    window.__firestore = db;
+    window.__fsAddDoc = addDoc;
+    window.__fsCollection = collection;
+    window.__fsDeleteDoc = deleteDoc;
+    window.__fsDoc = doc;
+    window.__fsReady = true;
+
+    // Listen pesanan secara live di background
+    const q = query(collection(db, "pesanan"));
+    onSnapshot(q, (snapshot) => {
+      const orders = {};
+      snapshot.forEach(docSnap => {
+        orders[docSnap.id] = docSnap.data();
+      });
+      if (typeof window.renderOrders === "function") {
+        window.renderOrders(orders);
+      }
+    }, () => {
+      if (typeof window.loadLocalOrders === "function") {
+        window.loadLocalOrders();
+      }
+    });
+
+  } catch(err) {
+    window.__fsReady = false;
+  }
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
