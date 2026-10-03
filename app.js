@@ -116,10 +116,13 @@ function initNavScroll() {
 
     let current = "";
     document.querySelectorAll("section[id]").forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      if (window.scrollY >= s.offsetTop - 140) current = s.id;
     });
     document.querySelectorAll(".nav-links a").forEach(a => {
       a.classList.toggle("active", a.getAttribute("href") === "#" + current);
+    });
+    document.querySelectorAll(".mbn-item").forEach(m => {
+      m.classList.toggle("active", m.getAttribute("href") === "#" + current);
     });
   });
 }

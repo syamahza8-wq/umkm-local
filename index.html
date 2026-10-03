@@ -451,6 +451,34 @@
 <!-- ░░ SCROLL TOP ░░ -->
 <button id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 
+<!-- ░░ MOBILE BOTTOM NAV (APP BAR) ░░ -->
+<nav class="mobile-bottom-nav" id="mobileBottomNav">
+  <a href="#home" class="mbn-item active" data-target="home">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+  </a>
+  <a href="#menu" class="mbn-item" data-target="menu">
+    <i class="fas fa-utensils"></i>
+    <span>Menu</span>
+  </a>
+  <a href="#video" class="mbn-item" data-target="video">
+    <i class="fas fa-film"></i>
+    <span>Video</span>
+  </a>
+  <a href="#pesan" class="mbn-item mbn-highlight" data-target="pesan">
+    <div class="mbn-icon-badge"><i class="fas fa-shopping-bag"></i></div>
+    <span>Pesan</span>
+  </a>
+  <a href="#riwayat" class="mbn-item" data-target="riwayat">
+    <i class="fas fa-receipt"></i>
+    <span>Riwayat</span>
+  </a>
+  <a href="#kontak" class="mbn-item" data-target="kontak">
+    <i class="fas fa-map-marker-alt"></i>
+    <span>Lokasi</span>
+  </a>
+</nav>
+
 <!-- ░░ DATABASE FIRESTORE BACKEND (SILENT CONNECTION) ░░ -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";

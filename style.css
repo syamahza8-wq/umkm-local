@@ -1154,7 +1154,84 @@ footer {
 #scrollTop.show { opacity: 1; pointer-events: auto; }
 
 /* ══════════════════════════════
-   RESPONSIVE DESIGN
+   MOBILE BOTTOM NAVIGATION (APP BAR)
+══════════════════════════════ */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 64px;
+  background: rgba(255, 248, 240, 0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  z-index: 1050;
+  box-shadow: 0 -4px 22px rgba(43, 33, 24, 0.08);
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.mbn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  gap: 3px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  transition: var(--trans);
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.mbn-item i {
+  font-size: 1.15rem;
+  transition: var(--trans);
+}
+
+.mbn-item:hover, .mbn-item.active {
+  color: var(--primary);
+}
+
+.mbn-item.active i {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.mbn-item.mbn-highlight {
+  color: var(--secondary);
+}
+
+.mbn-icon-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -18px;
+  box-shadow: 0 4px 14px rgba(242, 140, 40, 0.45);
+  transition: var(--trans);
+}
+
+.mbn-icon-badge i {
+  font-size: 1.1rem !important;
+  color: #fff !important;
+}
+
+.mbn-item.mbn-highlight.active .mbn-icon-badge {
+  transform: scale(1.08);
+  box-shadow: var(--glow-orange);
+}
+
+/* ══════════════════════════════
+   RESPONSIVE DESIGN (OPTIMASI HANDPHONE & TABLET)
 ══════════════════════════════ */
 @media (max-width: 1024px) {
   .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -1163,35 +1240,274 @@ footer {
   .buyer-tags { justify-content: center; }
   .video-showcase-wrap { grid-template-columns: 1fr; gap: 28px; }
 }
+
 @media (max-width: 860px) {
-  .hero { flex-direction: column; text-align: center; padding: 110px 24px 60px; gap: 40px; }
-  .hero-cta { justify-content: center; }
-  .hero-stats { justify-content: center; }
-  .order-wrap { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .video-showcase-wrap { padding: 22px; }
+  body {
+    padding-bottom: 68px; /* Ruang untuk Mobile Bottom Nav */
+  }
+
+  /* Tampilkan Mobile Bottom Nav di Layar Tablet & Handphone */
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  /* Geser Music Player & Scroll Top agar tidak tertutup nav bawah */
+  #musicPlayer {
+    bottom: 76px;
+    left: 14px;
+    padding: 4px;
+  }
+  #musicBtn {
+    padding: 7px 14px;
+    font-size: 0.76rem;
+  }
+  #scrollTop {
+    bottom: 76px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Header & Navbar */
+  .navbar {
+    padding: 10px 16px;
+  }
+  .nav-order-btn {
+    display: none; /* Sudah ada di bottom nav */
+  }
   .nav-links {
-    display: none; flex-direction: column;
-    position: absolute; top: 70px; left: 0; right: 0;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 66px; left: 0; right: 0;
     background: rgba(255, 248, 240, 0.98);
     border-bottom: 1px solid var(--border);
-    padding: 18px; gap: 6px;
+    padding: 16px 20px;
+    gap: 8px;
     box-shadow: var(--shadow-md);
   }
   .nav-links.open { display: flex; }
   .nav-hamburger { display: flex; }
   .music-ticker { display: none; }
+
+  /* Hero Section */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 95px 20px 45px;
+    gap: 36px;
+    min-height: auto;
+  }
+  .hero-chip {
+    font-size: 0.76rem;
+    padding: 6px 16px;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 2.7rem);
+    margin-bottom: 14px;
+  }
+  .hero-desc {
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+  }
+  .hero-cta {
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .hero-cta .btn {
+    padding: 12px 22px;
+    font-size: 0.86rem;
+  }
+  .hero-stats {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding: 10px 16px;
+  }
+  .sn { font-size: 1.15rem; }
+  .sl { font-size: 0.72rem; }
+
+  /* Sections */
+  .section {
+    padding: 60px 18px;
+  }
+  .sec-head {
+    margin-bottom: 36px;
+  }
+  .sec-head h2 {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+  }
+  .sec-head p {
+    font-size: 0.88rem;
+  }
+
+  /* Form & Sidebar */
+  .order-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .order-form-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Video Showcase */
+  .video-showcase-wrap {
+    padding: 22px;
+    border-radius: 18px;
+  }
+  .video-story-box h3 {
+    font-size: 1.35rem;
+  }
+
+  /* Ulasan Spotlight */
+  .buyer-spotlight-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+    gap: 20px;
+  }
+  .buyer-quote {
+    font-size: 1.02rem;
+  }
 }
+
 @media (max-width: 600px) {
-  .hero-img { width: 210px; height: 210px; }
-  .menu-grid { grid-template-columns: 1fr; }
-  .buyer-img-box { width: 200px; height: 200px; }
-  .footer-inner { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .history-toolbar { flex-direction: column; align-items: stretch; }
-  .search-wrap { max-width: 100%; }
-  .video-showcase-wrap { padding: 16px; border-radius: 16px; }
-  .video-player-bar { flex-direction: column; align-items: flex-start; }
-  .video-actions { flex-direction: column; width: 100%; }
-  .video-actions .btn { width: 100%; justify-content: center; }
+  /* Handphone Layout Spesifik */
+  .hero-img-wrap {
+    width: 230px;
+    height: 230px;
+  }
+  .hero-img {
+    width: 195px;
+    height: 195px;
+  }
+  .hero-glow-ring {
+    width: 270px;
+    height: 270px;
+  }
+  .orbit span {
+    font-size: 1.4rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Menu Cards Grid */
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .menu-card {
+    border-radius: 16px;
+  }
+  .menu-card-img-wrap {
+    height: 185px;
+  }
+
+  /* Form Menu List */
+  .oml-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .oml-thumb {
+    width: 42px;
+    height: 42px;
+  }
+  .oml-name {
+    font-size: 0.86rem;
+  }
+  .qty-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.05rem;
+  }
+  .qty-num {
+    min-width: 26px;
+    font-size: 0.92rem;
+  }
+
+  /* Video Showcase */
+  .video-showcase-wrap {
+    padding: 16px;
+    border-radius: 16px;
+  }
+  .video-screen-frame {
+    border-radius: 12px;
+  }
+  .video-player-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+  .btn-play-trigger {
+    width: 100%;
+    justify-content: center;
+  }
+  .video-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .video-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Ulasan & Pembeli */
+  .buyer-img-box {
+    width: 100%;
+    max-width: 240px;
+    height: 220px;
+    margin: 0 auto;
+  }
+  .review-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Riwayat & Search */
+  .history-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .search-wrap {
+    max-width: 100%;
+  }
+  .history-actions {
+    justify-content: space-between;
+  }
+  .history-card {
+    padding: 18px 14px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 92%;
+  }
 }
